@@ -8,5 +8,6 @@
  * @author obenjamin
  */
 public class vectormath {
+    system.out.println("hello world");
 
 }
