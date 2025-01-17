@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
@@ -24,43 +25,52 @@ public class App {
             printVector(A2);
         }
 
-        while(!"q".equals(scanner.nextLine())) {
-            System.out.println("Vectors stored:");
-            
-            System.out.print("Vector1: ");
+        scanner.nextLine();
+
+        while (true) {
+            System.out.println("\nVectors stored:");
+            System.out.print("Vector 1: ");
             printVector(A1);
-
-            System.out.print("Vector2: ");
+            System.out.print("Vector 2: ");
             printVector(A2);
-            
-            System.out.println("Options:\n1: add\n2: subtract\n3: take magnitude of a vector");
+        
+            System.out.println("\nOptions:\n1: Add\n2: Subtract\n3: Take magnitude of a vector\nType 'q' to quit");
             String response = scanner.nextLine();
+        
+            if (response.equals("q")) break; // Exit the loop if 'q' is entered
+        
             switch (response) {
-                case "add" : 
-                add(A1, A2);
-
-                case "subtract" :
-                subtract(A1, A2);
-
-                case "magnitude" :
-                System.out.println("Do you need the magnitude of vector 1 or vector 2?\n type 1 for vector 1\ntype 2 for vector 2\n");
-                response = scanner.nextLine();
-                if (response.equals("1")) {
-                    magnitude(A1);
-
-                } else if (response.equals("2")) {
-                    magnitude(A1);
-                } else {
-                    System.out.println("please input 1 or 2 invalid response");
-                    return;
+                case "1" -> {
+                    if (!checkVectors(A1, A2)) {
+                        System.out.println("Sorry, you may not add vectors whose sizes do not match!");
+                        break;
+                    }
+                    System.out.println("Result: " + Arrays.toString(add(A1, A2)));
                 }
-
-
-
+                case "2" -> {
+                    if (!checkVectors(A1, A2)) {
+                        System.out.println("Sorry, you may not subtract vectors whose sizes do not match!");
+                        break;
+                    }
+                    System.out.println("Result: " + Arrays.toString(subtract(A1, A2)));
+                }
+                case "3" -> {
+                    System.out.println("\nDo you need the magnitude of vector 1 or vector 2?\nType 1 for vector 1\nType 2 for vector 2");
+                    response = scanner.nextLine();
+                    if (response.equals("1")) {
+                        System.out.println("Magnitude of Vector 1: " + magnitude(A1));
+                    } else if (response.equals("2")) {
+                        System.out.println("Magnitude of Vector 2: " + magnitude(A2));
+                    } else {
+                        System.out.println("Please input 1 or 2. Invalid response.");
+                    }
+                }
+                default -> System.out.println("Invalid option. Please try again.");
             }
-
         }
     }
+        
+
 
     public static void printVector(int[] A1) {
         for (Object obj : A1) {
@@ -74,11 +84,8 @@ public class App {
     }
 
     public static int[] add(int A1[], int A2[]) {
-        if(!checkVectors(A1, A2)) {
-            System.out.println("Sorry, you may not add vectors who's size do not match!");
-            return null;
-        }
-        int A3[] = null;
+
+        int A3[] = new int[A1.length];
         for (int x = 0; x < A1.length; x++) {
             A3[x] = A1[x] + A2[x];
         }
@@ -86,11 +93,7 @@ public class App {
     }
 
     public static int[] subtract(int A1[], int A2[]) {
-        if(!checkVectors(A1, A2)) {
-            System.out.println("Sorry, you may not add vectors who's size do not match!");
-            return null;
-        }
-        int A3[] = null;
+        int A3[] = new int[A1.length];
         for (int x = 0; x < A1.length; x++) {
             A3[x] = A1[x] - A2[x];
         }
@@ -104,9 +107,5 @@ public class App {
             
         }
         return temp;
-    }
-
-    private static void Switch(String response) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
