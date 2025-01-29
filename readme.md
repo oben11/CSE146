@@ -1,1 +1,1 @@
-hi
+Hey! this is my repository for my Algorithmic Design 2 class with JJ Shepard.
