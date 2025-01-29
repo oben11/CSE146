@@ -1,5 +1,6 @@
 // Oliver Benjamin
 // CSE 146
+// Lab 00
 
 
 import java.util.Scanner;

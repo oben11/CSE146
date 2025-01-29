@@ -1,3 +1,7 @@
+// Oliver Benjamin
+// CSE 146
+// Homework 00
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -8,6 +12,9 @@ public class App {
         System.out.println("Welcome to the vector calculator by Oliver Benjamin\nplease enter the size of your first vector: ");
         int size = scanner.nextInt();
         int A1[] = new int[size];
+        int A2[] = new int[size];
+
+        // Create and populate vector 1
         for (int i = 0; i < size; i++) {
             System.out.printf("\nenter an integer for slot %s of Vector 1: ", i+1);
             A1[i] = scanner.nextInt();
@@ -15,9 +22,9 @@ public class App {
             printVector(A1);
         }
 
+        // Create and populate vector 2
         System.out.println("\nplease enter the size of your second vector: ");
         size = scanner.nextInt();
-        int A2[] = new int[size];
         for (int i = 0; i < size; i++) {
             System.out.printf("\nenter an integer for slot %s of Vector 2: ", i+1);
             A2[i] = scanner.nextInt();
@@ -27,6 +34,7 @@ public class App {
 
         scanner.nextLine();
 
+        // main program loop that runs operations
         while (true) {
             System.out.println("\nVectors stored:");
             System.out.print("Vector 1: ");
@@ -37,8 +45,9 @@ public class App {
             System.out.println("\nOptions:\n1: Add\n2: Subtract\n3: Take magnitude of a vector\nType 'q' to quit");
             String response = scanner.nextLine();
         
-            if (response.equals("q")) break; // Exit the loop if 'q' is entered
-        
+            if (response.equals("q")) break; // Exit the loop if q is entered
+            
+            // check if
             switch (response) {
                 case "1" -> {
                     if (!checkVectors(A1, A2)) {
@@ -71,7 +80,7 @@ public class App {
     }
         
 
-
+    // prints vector arg
     public static void printVector(int[] A1) {
         for (Object obj : A1) {
             System.out.printf("[%s]", obj);
@@ -79,10 +88,12 @@ public class App {
         System.out.print("\n");
     }
 
+    // checks if vectors are equal length
     public static boolean checkVectors(int []A1, int [] A2) {
         return A1.length == A2.length;
     }
 
+    // adds two vectors
     public static int[] add(int A1[], int A2[]) {
 
         int A3[] = new int[A1.length];
@@ -92,6 +103,7 @@ public class App {
         return A3;
     }
 
+    // subtracts two vectors
     public static int[] subtract(int A1[], int A2[]) {
         int A3[] = new int[A1.length];
         for (int x = 0; x < A1.length; x++) {
@@ -100,6 +112,7 @@ public class App {
         return A3;
     }
 
+    // calculates magnitude of arg vector
     public static double magnitude(int A1[]) {
         double temp = 0;
         for (int x = 0; x < A1.length; x++) {
