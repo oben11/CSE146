@@ -1,0 +1,43 @@
+1. Describe how the course grade is calculated. Make sure to include assignment types and their percentages. (10 pts)
+The course grade is calculated as follows:
+Homework Assignments: 20%
+Labs: 15%
+Projects: 15%
+Exams (2 exams): 30%
+Final Exam: 20%
+
+2. Where are all assignments submitted and where are the grades + feedback for assignments found? (10 pts)
+All assignments are submitted on Blackboard. Grades and feedback for assignments are also posted on Blackboard.
+
+3. What is the policy regarding: (10 pts)
+Late work? Late work is not accepted.
+Make-up work? Make-up work is only allowed for excused absences.
+Regrade requests? Regrade requests must be submitted in writing within one week of receiving the grade.
+
+4. True or False. All assignments must be completed individually. (10 pts)
+True. All assignments must be completed individually unless otherwise stated.
+
+5. For programming assignments, what must be submitted to the CSCE Dropbox and what is its file extension?
+We no longer use the CSE dropbox but we must submit the classes and  the extension is .java
+
+6. In the Java Programming Language, when a source code is compiled using the Java Compiler, is it compile to machine code or byte code? (10pts)
+Bytecode.
+
+7. Looking at the below code snippet, is this code error free and if so, what will it print to the console? If the code does have errors, then describe all syntax, run-time, and logic errors and how they may be fixed. (10pts)
+int not compatible with type double.
+
+8. Looking at the below code snippet, is this code error free and if so, what will it print to the console? If the code does have errors, then describe all syntax, run-time, and logic errors and how they may be fixed. (10pts)
+This code will run as intended assuming the programmer wanted both for loops to only run until i = 9;
+
+9. Looking at the below code snippet, is this code error free and if so, what will it print to the console? If the code does have errors, then describe all syntax, run-time, and logic errors and how they may be fixed. (10pts)
+Won't run correctly, J will never be less than 0.0 as it was initialized at 10.0
+
+10. Looking at the below code snippet, is this code error free and if so, what will it print to the console? If the code does have errors, then describe all syntax, run-time, and logic errors and how they may be fixed. (10pts)
+
+
+
+
+
+
+
+
