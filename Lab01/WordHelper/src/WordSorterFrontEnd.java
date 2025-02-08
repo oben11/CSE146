@@ -1,8 +1,8 @@
 /*
  * Written by JJ Shepherd
  */
-import java.util.*;
-import java.io.*;//Used for file input and output
+import java.io.*;
+import java.util.*;//Used for file input and output
 public class WordSorterFrontEnd {
 
 	//The file name to be read in the program's root directory. Be mindful that the program's directory is often times not the source directory
