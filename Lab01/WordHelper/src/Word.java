@@ -20,9 +20,9 @@ public class Word {
     // the first way I implemented it was this geeksforgeeks method https://www.geeksforgeeks.org/java-program-to-count-number-of-vowels-in-a-string/ 
     private int countVowels(String word) {
         int count = 0;
-        String vowels = "aeiouAEIOU";
+        String vowels = "aeiou";
         for (int i = 0; i < word.length(); i++) {
-            if (vowels.indexOf(word.charAt(i)) != -1) {
+            if (vowels.indexOf(Character.toLowerCase(word.charAt(i))) != -1) {
                 count++;
             }
         }

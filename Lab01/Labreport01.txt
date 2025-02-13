@@ -1,0 +1,40 @@
+Oliver Benjamin
+CSE146
+
+1. Problem
+Sort words by the number of consantants, vowels and length.
+
+2. Solution Description
+Transform each word string to a new word object, an object that stores the number of consantants, vowels and it's length.
+Then solve by implementing a bubbleSort method for each sorting mode.
+
+3. Problems Encountered
+Originally I tried to do this without objects and only operate on the String arrays, this caused all sorts of weird errors
+and some memory leaks to ultimatley objects were the way to go. They made the code less complex and simpler to understand.
+
+4. What are the advantages of using an array?
+Very simple, less complex and less memory usage.
+
+5. What are the disadvantages of using an array?
+Not dynamic, can't adjust the length.
+
+6. Describe the range of valid indices for an array.
+The number of valid indices is the number of indices you initialize it with. If you give it 10 indicies you can access indicies 0 -> 9.
+
+7. 
+No errors, outputs:
+z
+v
+r
+n
+j
+f
+b
+
+8. 
+Incorrect loop initilization, loop will not run, use for(int i = 0; i < array.length; i++).
+9.
+You need to create a for loop that copies the array element by element instead of just setting it equal to another array.
+10.
+It will create a double[] with the first 5 numbers being assigned on index's 0 -> 4 
+and the first 5 numbers multiplied by 2.0 on index's 5 -> 9
