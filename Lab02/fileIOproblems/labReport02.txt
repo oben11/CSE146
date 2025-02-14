@@ -1,0 +1,36 @@
+Oliver Benjamin
+CSE146
+
+1. Problem
+Take a file, read it and parse it line by line, perform String or math operations on the contents of each line.
+
+2. Solution Description
+use FileIO to import files, use the printwriter java method to write the output to an output file.
+
+3. Problems Encountered
+I couldn't figure out how to get the program to ignore invalid lines or not fail if an incorrect file is entered, I learned to use try catch methods
+which helped greatly for handling errors outside of my control.
+
+4. Describe the difference between absolute and relative file paths
+Absolute = full path to file, static and does not change
+Relative = depends on where you're running the program, usually used to reference the programs home directory or a path in relation to the file
+
+5. In terms of file paths, what does “./” mean?
+Home directory in relation to program.
+
+6. In this course, where should all files that are to be read from or printed to be placed?
+in "./" so it will work in any file environment.
+
+
+7. What important detail must one do when finished either reading from or writing to a file? (10pts)
+you need close the file using .close()
+
+
+8. Describe the purpose of “delimiters / separators” used in file formats. (10pts)
+It creates boundaries that make it possible to systematically split lines into different elements
+
+
+9.
+Programmer incorrectly used filescanner.next() instead of filescanner.nextLine()
+10.
+File writer will only append if you give it a true argument, this should fix the issue

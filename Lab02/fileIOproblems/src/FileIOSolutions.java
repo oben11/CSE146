@@ -1,3 +1,7 @@
+// Oliver Benjamin
+// CSE 146
+// Lab02
+
 import java.io.*;
 import java.util.*;
 
