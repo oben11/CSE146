@@ -1,5 +1,6 @@
 // Oliver Benjamin
 // CSE 146
+// Lab03
 
 /*
 Write a program in which the user loads and searches a database of video games. 
@@ -15,11 +16,11 @@ import java.util.*;
 
 public class VideoGameDatabase {
 
-    
+    // initialize linked list classes for each list
     public static LL<String> StringDB = new LL();
     public static LL<CollectionObject> loadedDB = new LL();
     public static LL<CollectionObject>lastSearchResult = new LL();
-
+        // controls user input, main command loop.
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             
@@ -30,8 +31,9 @@ public class VideoGameDatabase {
                 System.out.println("Enter 4 to print current results to file");
                 System.out.println("Enter 0 to quit");
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // Consume newline
+                scanner.nextLine();
                 
+                // command choices
                 switch (choice) {
                     case 1:
                         System.out.println("Enter the file name");
@@ -70,6 +72,8 @@ public class VideoGameDatabase {
             }
         }
         
+        // loads database into stringLL then converts to objects, 
+        // could be made more efficient by just using one LL and for loop since LL are dynamic.
         private static void loadDatabase(String fileName) {
             System.out.println("Loading database from " + fileName + "...");
             String tempString;
@@ -102,6 +106,7 @@ public class VideoGameDatabase {
 
     }
     
+    // searches loadedDB for certain terms or "*" any term, returns LL of results
     private static LL<CollectionObject> searchDatabase(String gameName, String consoleName) {
         System.out.println("Searching for: " + gameName + " on " + consoleName);
         LL<CollectionObject> lastSearchResult = new LL();
@@ -115,6 +120,7 @@ public class VideoGameDatabase {
         return lastSearchResult;
     }
     
+    // prints lastSearchResult to console.
     private static void printResults(LL<CollectionObject> lastSearchResult) {
         if (lastSearchResult.getSize() == 0) {
             System.out.println("No results found.");
@@ -126,7 +132,8 @@ public class VideoGameDatabase {
             }
         }
     }
-    
+
+    // prints lastSearchResult to given file.
     private static void printResultsToFile(LL<CollectionObject> lastSearchResult, String fileName) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
             for (int i = 0; i< lastSearchResult.getSize(); i++) {
