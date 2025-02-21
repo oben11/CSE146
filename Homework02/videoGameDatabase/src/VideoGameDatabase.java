@@ -1,6 +1,6 @@
 // Oliver Benjamin
 // CSE 146
-// Lab03
+// Homework02
 
 /*
 Write a program in which the user loads and searches a database of video games. 

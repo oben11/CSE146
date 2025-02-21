@@ -1,6 +1,6 @@
 // Oliver Benjamin 
 // CSE 146
-// Lab03
+// Homework02
 
 public class CollectionObject {
     private String name;

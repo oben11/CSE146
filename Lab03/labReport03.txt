@@ -1,0 +1,34 @@
+// Oliver Benjamin
+// CSE 146
+// Lab03
+
+1. Problem
+Sort a list of groceries and their cost by different parameters, print them to console and get the total price.
+
+2. Solution Description
+Sort groceryitem objects into a linkedlist that is compatible with GroceryListTester.
+
+3. Problems Encountered
+Originally the driver program was printing out the objects memory address instead of the instance variables I wanted it too,
+I looked it up and eventually realized the @Ovveride tag could be used to allow the object to be printed without having to call .toString
+
+4.
+The linked list allows dynamic sizing, I'm able to add and remove objects as I please and I don't have to create a list of a known size.
+
+5.
+Inefficient and more memory intensive, not always the most effective route but very helpful for most use cases.
+
+6. 
+The programmer forgets to point to the link so there's no way for it to find the next item in the list therefore it won't iterate through all items
+
+7. 
+It doesn't touch the list as it exists it replaces the head effectivley destroying the list instead of linking it in.
+
+8.
+Doesn't actually touch the first node it only assigns it to a temporary pointer.
+
+9. 
+The programmer accidentally removes the pointer before being sure that it's the last node, that's why it leads to a nullpointerexception because you already killed the node.
+
+10. 
+You're checking if temp.link is null instead of if the temp value is null, the last index doesn't have a link so it skips multiplying the last index.
