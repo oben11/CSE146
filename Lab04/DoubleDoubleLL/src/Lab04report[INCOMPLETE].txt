@@ -1,0 +1,11 @@
+Oliver Benjamin
+Labreport04
+4. The JVM garbage collects unreachable objects. 
+5. Linked lists allow dynamic size and efficient insertions/deletions, but arrays offer faster random access. 
+6. Doubly linked lists enable bidirectional traversal, but require more memory than singly linked lists.
+7. Lacks a loop for traversal needs correction to print "Abc efG Hil kLm nop".
+8. Flawed logic for comparing lengths fails to return "efG".
+9. Incorrectly updates node data needs fixing to yield "value efG Hil kLm nop".
+10. Ineffective removal code requires head pointer change for an empty list.
+
+// incomplete

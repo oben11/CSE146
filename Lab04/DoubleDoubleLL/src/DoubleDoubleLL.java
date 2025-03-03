@@ -7,7 +7,7 @@ public class DoubleDoubleLL<Double> {
     {
         double data;
         ListNode link;
-
+        // node format
         public ListNode(double aData, ListNode aLink)
         {
             data = aData;
@@ -18,13 +18,13 @@ public class DoubleDoubleLL<Double> {
     private ListNode current;
     private ListNode previous;
     private int size;
-
+    // linked list init
     public DoubleDoubleLL()
     {
         head = current = previous = null;
         this.size = 0;
     }
-
+    // add node to end
     public void add(double aData)
     {
         ListNode newNode = new ListNode(aData,null);
@@ -40,7 +40,7 @@ public class DoubleDoubleLL<Double> {
         temp.link = newNode;
         this.size++;
     }
-
+    // prints the list out
     public void print()
     {
         ListNode temp = head;
@@ -50,7 +50,7 @@ public class DoubleDoubleLL<Double> {
             temp = temp.link;
         }
     }
-
+    // adds a new node after current node
     public void addAfterCurrent(double aData)
     {
         if(current == null)
@@ -59,20 +59,20 @@ public class DoubleDoubleLL<Double> {
         current.link = newNode;
         this.size++;
     }
-
+    // get current
     public double getCurrent()
     {
 
         return current.data;
     }
-
+    // set current
     public void setCurrent(double aData)
     {
         if(current == null)
             return;
         current.data = aData;
     }
-
+    // goes to next index
     public void gotoNext()
     {
         if(current == null)
@@ -80,7 +80,7 @@ public class DoubleDoubleLL<Double> {
         previous = current;
         current = current.link;
     }
-
+    // goes to previous index
     public void gotoPrev()
     {
     if (current == head || current == null)
@@ -94,7 +94,7 @@ public class DoubleDoubleLL<Double> {
     }
     current = previous;
     }
-
+    // goes to end of the list
     public void gotoEnd()
     {
     if (head == null)
@@ -112,12 +112,12 @@ public class DoubleDoubleLL<Double> {
         current = head;
         previous = null;
     }
-
+    // is list at end.
     public boolean hasMore()
     {
         return current != null;
     }
-
+    // Removes the current head
     public void removeCurrent()
     {
         if(current == head)
@@ -133,12 +133,12 @@ public class DoubleDoubleLL<Double> {
         if(this.size > 0)
             size--;
     }
-
+    // gets current length of list
     public int getSize()
     {
         return this.size;
     }
-
+    // gets data at list index
     public double getAt(int index)
     {
         ListNode temp = head;
@@ -146,7 +146,7 @@ public class DoubleDoubleLL<Double> {
             temp = temp.link;
         return temp.data;
     }
-
+    // sets index to aData
     public void setAt(int index, double aData)
     {
         if(index < 0 || index >= size)
@@ -156,7 +156,7 @@ public class DoubleDoubleLL<Double> {
             temp = temp.link;
         temp.data = aData;
     }
-
+    // checks if aData is in list
     public boolean contains(double aData)
 {
     ListNode temp = head;
