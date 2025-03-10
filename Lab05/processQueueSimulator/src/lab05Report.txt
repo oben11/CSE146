@@ -1,0 +1,38 @@
+Oliver Benjamin
+LabReport05
+
+1. Problem
+Run a list of processes in order and show their completion time.
+
+2. Solution Description
+Have multiple classes interact create objects sort them into lists then run those lists in queue.
+
+
+3. Problems encountered
+I had trouble implementing the queue and linked list into the same class but with a little manipulation i relaized their functionality is really similar
+
+4. How is a queue structured? (10pts)
+First in first out, everything is in order.
+
+5. Describe when it is most appropriate to use a Queue in a problem. (10pts)
+When things need to be executed in a specific order.
+
+6. Detail two ways Queues are commonly used in computing. (10pts)
+Stuff like print jobs and searching that need to happen in order
+
+7. What are the values in the queue following these actions? The answer must clearly show the “head” and “tail” values. (10pts)
+Head: 5
+Tail: 22
+Values: [5, 25, 35, 45, 55, 22]
+
+8.
+Head: 3 k
+Tail: 6 a
+Array: m, e, j, k, n, o, a, b, c
+
+
+9.
+I dont know exactly how the queue class is coded but it looks like you should be using a peek method to access the data instead of queue[i]
+
+10. 
+were setting head to head.link instead of the temp value which is messing up our search
