@@ -8,10 +8,13 @@ public class App {
     private static Scanner scanner = new Scanner(System.in);
             
     public static void main(String[] args) throws Exception {
+            System.out.println("\nWelcome to the sort sorter, this program allows you to sort strings the number of \"sorts\" that they contain\ntype \"sort\" to start sorting your sorts or...\ntype \"quit\" to quit");
+
             boolean quit = false;
             // main loop
             while(quit==false) {
-                System.out.println("\nWelcome to the sort sorter, this program allows you to sort strings the number of \"sorts\" that they contain\ntype \"sort\" to start sorting your sorts or...\ntype \"quit\" to quit");
+                System.out.println("\nWow that was fun want to sort again?\ntype \"sort\" to start sorting your sorts or...\ntype \"quit\" to quit");
+
 
                 String input = scanner.nextLine();
             
