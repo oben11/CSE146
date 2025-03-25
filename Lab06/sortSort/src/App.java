@@ -14,8 +14,6 @@ public class App {
             // main loop
             while(quit==false) {
                 System.out.println("\nWow that was fun want to sort again?\ntype \"sort\" to start sorting your sorts or...\ntype \"quit\" to quit");
-
-
                 String input = scanner.nextLine();
             
             // option menu

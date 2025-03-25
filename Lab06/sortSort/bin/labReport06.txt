@@ -1,0 +1,36 @@
+// Oliver Benjamin
+// CSE146
+// Lab06
+
+1. Problem
+I need to sort a list of user provided strings by the number of the word "sort" in each string least to greatest
+
+2. Solution
+Implement a user prompt that collects strings with scanner and a switch function, then create a function to count the number of occurances of a string and use those values for a quicksort.
+
+3. Problems encountered
+I struggled porting the quicksort to take a string array instead, I couldn't find which integers to replace with the value of my countOccurances() function, after failed attempts and many incorrectly sorted lists I found the solution though.
+
+4. Is f(n) = n, O(n2)? Describe why or why not.
+Yes, f(n)=n is under in time complexity O(n2) so it qualifys.
+
+5. Is f(n) = 2,000n3 + 1,000,000n2 + 200n + 4, O(n3)? Desribe why or why not.
+Yes, the fastest growing term doesn't exceed O(n3).
+
+6. Is f(n) = n!, O(2n)? Describe why or why not.
+No, factorial grows very very fast where as 2^n is just an exponet so It would not fit under the time complexity required.
+
+
+7. What is the Big O time complexity for bubble sort?
+O(n^2)
+
+8. What is the Big O time complexity for quick sort?
+A majority of the time it's O(n log n) but O(n^2) in the worst cases
+
+9. What is the Big O time complexity for merge sort?
+O(n log n)
+
+10. In relation to time complexity, which is considered more efficient, Selection Sort or Merge Sort? Describe why.
+Merge sort, it's time complexity is O(n log n) which is better than selection sort O(n^2) as it gets slower the larger the list is.
+ 
+
