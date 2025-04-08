@@ -1,0 +1,29 @@
+1. Problem
+This lab is about working with binary search trees, and sorting fruit objects into them
+2. Solution Description
+The code creates and manipulates a binary search tree. making sure the tree stays balanced. The tester loads a file of fruit objects and populates the tree to make sure it works.
+
+3. Problems Encountered
+I ran into issues with getting the tree to balance correctly, i didnt implement it correctly Also had some trouble with search functions returning the right values
+
+4. Self-Balancing vs. Non-Self-Balancing Trees
+A self balancing tree automatically adjusts structure to maintain a height, non self balancing tree can cause slow performance because it doesn't have a maintained heingt
+
+5. Big O for Balanced BST Search
+O(log n)
+
+6. Big O for Non-Balanced BST Search
+O(n)
+
+7.
+
+8.
+
+
+9.
+Pre order: 50, 25, 15, 75, 65, 100
+In order: 15, 25, 50, 65, 75, 100
+Post order: 15, 25, 65, 100, 75, 50
+
+10.
+53
