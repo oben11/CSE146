@@ -1,0 +1,42 @@
+// Oliver Benjamin
+// CSE 146
+// Lab09 report
+
+1. Problem
+The problem is to understand and apply depth-first search(DFS) and breadth first search (BFS) on a directed graph.
+
+2. Solution Description
+My code solves the problem by creating DFS and BFS algorithms that visit each node in a a specific order based on a graph structure
+
+3. Problems Encountered
+handling visited nodes properly and getting to the next node and stopping duplicates
+
+4. DFS Description
+DFS will search as far as possible along every branch before continuing using recursion.
+
+5. BFS Description
+BFS explores all of the neighbors for each depth before moving to the next level using a queue
+
+6. Adjacency Matrix :
+
+    V1   V2  V3  V4  V5  V6  V7
+V1   0   1   0   0   0   0   0
+V2   0   0   0   1   1   0   0
+V3   1   0   0   0   0   0   0
+V4   0   0   0   0   0   0   1
+V5   1   0   1   0   0   0   0
+V6   0   0   0   0   1   0   0
+V7   0   0   0   0   0   1   0
+
+7. DFS from v5
+v5 > v1 > v2 > v4 > v7 > v6 > v3
+
+
+8. BFS  from v5
+v5 > v1 > v3 > v2 > v4 > v7 > v6
+
+9. DFS from  v2
+v2 > v4 > v7 > v6 > v5 > v1 > v3
+
+10. BFS from v2
+v2 > v4 > v5 > v7 > v1 > v6 > v3

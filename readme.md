@@ -1,1 +1,1 @@
-Hey! this is my repository for my Algorithmic Design 2 class with JJ Shepard.
+Hey! this is my repository for my CSE146 Algorithmic Design 2 class with JJ Shepard at UofSC.

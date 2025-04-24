@@ -15,10 +15,10 @@ public class SheepScheduler {
 
         boolean runAgain;
         do {
-            System.out.print("Enter the sheep scheduling file name: ");
+            System.out.print("Enter the Sheep scheduling file name: ");
             String filename = userInput.nextLine();
 
-            Order[] allSheep = readSheepFile(filename);
+            Sheep[] allSheep = readSheepFile(filename);
 
             if (allSheep != null) {
                 runSimulation(allSheep);
@@ -34,7 +34,7 @@ public class SheepScheduler {
         userInput.close();
     }
 
-    private static Order[] readSheepFile(String filename) {
+    private static Sheep[] readSheepFile(String filename) {
         int numSheep = 0;
 
         try (Scanner counterScanner = new Scanner(new File(filename))) {
@@ -50,13 +50,13 @@ public class SheepScheduler {
         }
 
         if (numSheep == 0) {
-        System.out.println("couldn't find any sheep!");
-        return new Order[0];
+        System.out.println("couldn't find any Sheep!");
+        return new Sheep[0];
         }
 
-        Order[] sheepArray = new Order[numSheep];
+        Sheep[] SheepArray = new Sheep[numSheep];
         int index = 0;
-        System.out.println("Reading sheep data from: " + filename);
+        System.out.println("Reading Sheep data from: " + filename);
 
         try (Scanner fileScanner = new Scanner(new File(filename))) {
             while (fileScanner.hasNextLine() && index < numSheep) {
@@ -67,7 +67,7 @@ public class SheepScheduler {
                     String name = parts[0].trim();
                     int shearTime = Integer.parseInt(parts[1].trim());
                     int arrivalTime = Integer.parseInt(parts[2].trim());
-                    sheepArray[index++] = new Order(name, shearTime, arrivalTime);
+                    SheepArray[index++] = new Sheep(name, shearTime, arrivalTime);
                     } catch (Exception e) {
                         System.err.println("Warning: Skipping invalid line: " + line);
                     }
@@ -77,12 +77,12 @@ public class SheepScheduler {
             }
 
             if(index != numSheep) {
-                sheepArray = Arrays.copyOf(sheepArray, index);
+                SheepArray = Arrays.copyOf(SheepArray, index);
             }
 
-            Arrays.sort(sheepArray, Comparator.comparingInt(Order::getArrivalTime));
-            System.out.println("Successfully read " + sheepArray.length + " sheep records.");
-            return sheepArray;
+            Arrays.sort(SheepArray, Comparator.comparingInt(Sheep::getArrivalTime));
+            System.out.println("Successfully read " + SheepArray.length + " Sheep records.");
+            return SheepArray;
 
         } catch (FileNotFoundException e) {
         System.out.println("Error: File not found during second read - " + filename);
@@ -95,30 +95,30 @@ public class SheepScheduler {
     }
 
 
-    private static void runSimulation(Order[] allSheep) {
+    private static void runSimulation(Sheep[] allSheep) {
         if (allSheep == null || allSheep.length == 0) {
-            System.out.println("No sheep data to simulate.");
+            System.out.println("No Sheep data to simulate.");
             return;
         }
 
 
         System.out.println("\n--- Shearing Schedule Simulation ---");
 
-        MinHeap<Order> waitHeap = new MinHeap<Order>();
+        MinHeap<Sheep> waitHeap = new MinHeap<Sheep>();
 
         int currentTime = 0;
-        int sheepIndex = 0;
-        Order currentSheep = null;
+        int SheepIndex = 0;
+        Sheep currentSheep = null;
         int finishTime = -1;
 
 
-        while (sheepIndex < allSheep.length || !waitHeap.isEmpty() || currentSheep != null) {
+        while (SheepIndex < allSheep.length || !waitHeap.isEmpty() || currentSheep != null) {
 
-            while (sheepIndex < allSheep.length && allSheep[sheepIndex].getArrivalTime() <= currentTime) {
-                Order arrivingSheep = allSheep[sheepIndex];
+            while (SheepIndex < allSheep.length && allSheep[SheepIndex].getArrivalTime() <= currentTime) {
+                Sheep arrivingSheep = allSheep[SheepIndex];
                 System.out.println("Time " + currentTime + ": " + arrivingSheep.getName() + " arrived.");
                 waitHeap.add(arrivingSheep);
-                sheepIndex++;
+                SheepIndex++;
             }
 
             if (currentSheep != null && currentTime >= finishTime) {
@@ -134,8 +134,8 @@ public class SheepScheduler {
                         + " (Est. Finish Time: " + finishTime + ")");
             }
 
-             if(currentSheep == null && waitHeap.isEmpty() && sheepIndex < allSheep.length) {
-                 int nextArrivalTime = allSheep[sheepIndex].getArrivalTime();
+             if(currentSheep == null && waitHeap.isEmpty() && SheepIndex < allSheep.length) {
+                 int nextArrivalTime = allSheep[SheepIndex].getArrivalTime();
                   if(nextArrivalTime > currentTime) {
                      currentTime = nextArrivalTime;
                      continue;
